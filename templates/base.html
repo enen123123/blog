@@ -1,0 +1,31 @@
+{#基础页面框架#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            首页
+        {% endblock %}
+    </title>
+
+        <link rel="stylesheet" type="text/css" href="/static/blog.css"/>
+
+</head>
+<body class="guide">
+
+		<div class="container">
+			{% include 'header.html' %}
+		</div>
+
+		<div class="outer">
+            {% block main %}
+            
+            {% endblock %}
+
+            {% include 'right.html' %}
+
+		</div>
+
+</body>
+</html>

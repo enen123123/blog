@@ -1,0 +1,92 @@
+.guide{
+	background-color:lightgray
+
+}
+.container{
+
+}
+.nav_warp_ul{
+	height: 60px;
+	background-color:black;
+}
+.nav_warp_ul li{
+	text-decoration: none;
+	float: left;
+	line-height: 40px;
+	margin-left: 20px;
+	list-style: none;
+	color: whitesmoke;
+}
+.nav_warp_ul a{
+	text-decoration: none;
+	line-height: 40px;
+	list-style: none;
+	color: whitesmoke;
+}
+
+.outer li{
+	list-style: none;
+}
+.sousuo{
+	float: right;
+	border: 2px solid orange;
+	margin: 20px;
+}
+.outer{
+	height: 800px;
+	width: 1520px;
+}
+.zuobian span{
+	margin-left: 30px;
+}
+.zuobian{
+	float: left;
+	width: 1000px;
+	background-color: ghostwhite;
+}
+.zuobian1{
+	margin-left: 60px;
+	margin-top: 30px;
+	float: left;
+	width: 1000px;
+	background-color: lightgrey;
+}
+.youbian{
+	float: right;
+	background-color: lightgray;
+}
+.page{
+
+	height: 60px;
+	width: 1000px;
+	background-color: ghostwhite;
+	/* 居中 */
+	display: block;
+	text-align: center;
+	line-height: 60px;
+}
+.page_number_current{
+	color: #4ac1f7;
+}
+.page a{
+	text-decoration: none;
+}
+
+.fenlei{
+	height: 100px;
+	width: 400px;
+	background-color: ghostwhite;
+}
+.guidang{
+	height: 100px;
+	width: 400px;
+	background-color: ghostwhite;
+}
+.jinqiwenzhang{
+	height: 100px;
+	width: 400px;
+	background-color: ghostwhite;
+}
+.youqinglianjie{
+
+}

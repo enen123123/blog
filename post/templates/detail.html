@@ -1,0 +1,49 @@
+{#继承基础文本框架#}
+{% extends 'base.html' %}
+
+{#加载自定义过滤器#}
+{% load mymarkdown %}
+{#标题#}
+{% block title %}
+    详情页面
+{% endblock %}
+{#展示具体的正文内容#}
+{% block main %}
+    <style>
+        .qita p{
+            {#background-color: #4ac1f7;#}
+            margin-left: 30px;
+        }
+    </style>
+    <div class="zuobian">
+{#    日期,名字#}
+        <span>{{ post_obj.created|date }}</span>
+        <span>{{ post_obj.category.cname }}</span>
+            <div class="qita">
+            <br>
+{#            标题#}
+                <h1>&emsp;{{ post_obj.title }}</h1>
+                <h2>&emsp; 前言</h2>
+                <hr size="3px" color="pink">
+{#            简介#}
+                <h3>{{ post.desc }}</h3>
+{#            正式文本#}
+{#                自定义过滤器将txt转化成html格式,但是会改变其他格式#}
+                <span>{{ post_obj.content|md|safe }}</span>
+{#            另一种表达形式,为了美观且富文本格式,注释该形式#}
+{#                <p class="neirong">#}
+{#                    <span >{{ post_obj.content|md }}</span>#}
+{#                </p>#}
+                <hr>
+                <span>
+{#                获得所有的标签#}
+                    {% for tag in post_obj.tag.all %}
+                        #{{ tag.tname }}&emsp;
+                    {% endfor %}
+                </span>
+            <br><br><br>
+            </div>
+
+    </div>
+{% endblock %}
+

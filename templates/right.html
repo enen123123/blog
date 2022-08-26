@@ -1,0 +1,42 @@
+{#右边的简易提示框#}
+<li class="sidebar">
+    <style>
+        .youbian a{
+            margin: 10px;
+            text-decoration: none;
+        }
+    </style>
+    <div class="youbian">
+        <span>分类</span>
+        <div class="fenlei">
+            {% for rc in r_cate_post %}
+                <a href="/category/{{ rc.category }}">{{ rc.category__cname }}：({{ rc.c }})</a>
+                <span>{{ rf.1 }}</span>
+                <br>
+            {% endfor %}
+
+        </div>
+
+        <span>归档</span>
+        <div class="guidang">
+            {% for rf in r_file_post %}
+                <a href="/archive/{{ rf.0|date:'Y' }}/{{ rf.0|date:'m' }}">{{ rf.0|date:'Y' }}年{{ rf.0|date:'m' }}月</a>
+                <br>
+            {% endfor %}
+
+        </div >
+
+        <span>近期文章</span>
+        <div class="jinqiwenzhang">
+            {% for rr in r_recent_post %}
+                <a href="/post/{{ rr.id}}">{{ rr.title}}</a>
+                <br>
+            {% endfor %}
+
+
+        </div>
+
+        <a href="https://wwww.baidu.com" class="youqinglianjie">友情链接</a>
+
+    </div>
+</li>

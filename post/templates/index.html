@@ -1,0 +1,54 @@
+{#继承基础框架#}
+{% extends 'base.html' %}
+{#设置初始的主要内容,更详细的放在detail.html#}
+{% block main %}
+    <div class="zuobian">
+{#    <span>其他</span>#}
+        {% for post in postlist %}
+            <span>{{ post.created|date }}</span>
+            <span>{{ post.category.cname }}</span>
+            <br>
+            <h1>&emsp;{{ post.title }}</h1>
+            <h2>&emsp; 前言</h2>
+            <hr size="3px" color="pink">
+            <h3>&emsp;&emsp;{{ post.desc }}</h3>
+{#            将正文隐藏在其他路径文件下,链接打开#}
+            &emsp;&emsp;<a href="/post/{{ post.id }}">阅读全文</a>
+            <hr>
+            <span>
+
+                {% for tag in post.tag.all %}
+                    #{{ tag.tname }}&emsp;
+                {% endfor %}
+
+            </span>
+            <br><br><br><br>
+
+        {% endfor %}
+        <br>
+        <div class="page">
+                {% if postlist.has_previous %}
+                    <a class="extend_last" href="/page/{{ postlist.previous_page_number}}"><<</a>
+                {% endif %}
+            {% for page in page_list %}
+
+                {% if current_num == page %}
+                    <a href="" class="page_number_current" >{{ page }}</a>
+                {% else %}
+                    <a class="page_number" href="/page/{{ page }}">{{ page }}</a>
+                {% endif %}
+
+            {% endfor %}
+
+
+                {% if postlist.has_next %}
+                    <a class="extend_next" href="/page/{{ postlist.next_page_number}}">>></a>
+                {% endif %}
+            </div>
+
+    </div>
+
+{% endblock %}
+
+
+

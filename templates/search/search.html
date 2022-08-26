@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    搜索结果页面
+{% endblock %}
+
+{% block main %}
+
+    <style>
+        .guidang a{
+            margin: 10px;
+            text-decoration: none;
+        }
+
+    </style>
+{#    新的搜索结果页面#}
+{#    该项目下还有建立一个文本txt#}
+    <div class="zuobian1">
+        {% if query %}
+            {% for cp in page.object_list %}
+                <div class="guidang">
+                        <a >{{ cp.object.created.date }}</a>
+                    <br>
+                        <a href="/post/{{ cp.object.id }}" >{{ cp.object.title }}</a>
+                </div >
+            <br>
+            {% empty %}
+                <a >无记录</a>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+
+{% endblock %}
+

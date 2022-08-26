@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    分类归档
+{% endblock %}
+{#归档可用,搜索可用#}
+{#展示所有或者个别限制下的数据清单内容框#}
+{% block main %}
+
+    <style>
+        .guidang a{
+            margin: 10px;
+            {#去掉链接标签的下划线#}
+            text-decoration: none;
+        }
+
+    </style>
+    <div class="zuobian1">
+{#    循环所有的数据框并展示部分欸日,日期,标题#}
+        {% for cp in c_post %}
+            <div class="guidang">
+                    <a >{{ cp.created.date }}</a>
+                <br>
+                    <a href="/post/{{ cp.id }}" >{{ cp.title }}</a>
+            </div >
+        <br>
+        {% empty %}
+{#            当数据为空时展示#}
+            <a >无记录</a>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
+

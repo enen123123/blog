@@ -1,0 +1,23 @@
+pythonanywhere
+  前言
+# 更换自己的pythonanywhere网站，需要False,并添加自己的网站 
+DEBUG = False 
+ALLOWED_HOSTS = ['enen.pythonanywhere.com']
+压缩文件前操作最佳
+
+自定义建立最新的python3.9,有3.10更好
+
+将项目整个文件压缩，然后上传，在类似虚拟机上解压打开
+unzip 压缩包
+
+解压，安装相应所需要的模块
+pip install 模块
+配置虚拟环境，url静态配置，
+Code:
+     Source code:配置项目解压位置
+        WSGI configuration file:将其他注释，将Django模块接触注释
+
+Static files:寻找对应的静态文件地址并添加
+
+# pythonanywhere 需要将redis数据库更改为本地default
+CACHE_MIDDLEWARE_ALIAS = "redis"
